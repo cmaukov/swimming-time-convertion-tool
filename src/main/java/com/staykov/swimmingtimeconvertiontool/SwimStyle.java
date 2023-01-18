@@ -1,4 +1,4 @@
-package com.bmstechpro.javafxexamples.pooltime.conv;
+package com.staykov.swimmingtimeconvertiontool;
 /* javafx-examples
  * @created 01/16/2023
  * @author Konstantin Staykov

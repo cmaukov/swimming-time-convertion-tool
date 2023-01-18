@@ -6,7 +6,8 @@ plugins {
 }
 
 group 'com.staykov'
-version '1.0-SNAPSHOT'
+//version '1.0-SNAPSHOT'
+version '1.0.0'
 
 repositories {
     mavenCentral()
@@ -25,7 +26,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'com.staykov.swimmingtimeconvertiontool'
-    mainClass = 'com.staykov.swimmingtimeconvertiontool.HelloApplication'
+    mainClass = 'com.staykov.swimmingtimeconvertiontool.SwimmingTimeConversionApp'
 }
 
 javafx {
@@ -47,7 +48,7 @@ jlink {
     imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
     options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
     launcher {
-        name = 'app'
+        name = 'Swim Time Converter'
     }
 }
 

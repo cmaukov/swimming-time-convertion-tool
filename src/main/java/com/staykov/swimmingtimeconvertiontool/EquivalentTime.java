@@ -1,4 +1,4 @@
-package com.bmstechpro.javafxexamples.pooltime.conv;
+package com.staykov.swimmingtimeconvertiontool;
 /* javafx-examples
  * @created 01/16/2023
  * @author Konstantin Staykov
@@ -103,13 +103,13 @@ public class EquivalentTime {
         int sec = iPart - min * 60;
         var ms = Math.round((convertedTime - iPart) * 100);
 
-        return "Converted Time: " + min + ":" + sec + ":" + ms;
+        return min + ":" + sec + ":" + ms;
 
     }
 
     @Override
     public String toString() {
-        return String.format("SwimTimeConverter\nEvent: %s\nFrom: %s\nTo: %s\nSwim time: %.2f\n%s",
+        return String.format("SwimTimeConverter\nEvent: %s\nFrom: %s\nTo: %s\nSwim time: %.2f\nConverted Time: %s",
                 swimStyle.getDisplayName(),
                 fromCourse.getDisplayName(),
                 toCourse.getDisplayName(),

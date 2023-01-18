@@ -1,16 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.staykov.swimmingtimeconvertiontool.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #cce0ff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.staykov.swimmingtimeconvertiontool.UIController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="10.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="500.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="ALWAYS" />
+    <RowConstraints minHeight="500.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="ALWAYS" />
+  </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #99c2ff; -fx-border-color: black;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+         <children>
+            <GridPane layoutX="18.0" layoutY="130.0" prefHeight="200.0" prefWidth="458.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Convert From:">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="Distance/Stroke" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="Convert To:" GridPane.columnIndex="2">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="fromChoiceBox" prefWidth="150.0" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="toChoiceBox" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="distanceChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="strokeChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <children>
+                        <TextField fx:id="mmIn" prefHeight="26.0" prefWidth="40.0" promptText="MM" />
+                        <TextField fx:id="ssIn" layoutX="73.0" layoutY="32.0" prefHeight="26.0" prefWidth="40.0" promptText="SS" />
+                        <TextField fx:id="msIn" layoutX="93.0" layoutY="32.0" prefHeight="26.0" prefWidth="40.0" promptText="MS" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <children>
+                        <TextField fx:id="mmOut" editable="false" prefHeight="26.0" prefWidth="40.0" promptText="MM" />
+                        <TextField fx:id="ssOut" layoutX="73.0" layoutY="32.0" prefHeight="26.0" prefWidth="40.0" promptText="SS" />
+                        <TextField fx:id="msOut" layoutX="93.0" layoutY="32.0" prefHeight="26.0" prefWidth="40.0" promptText="MS" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="calcBtn" defaultButton="true" mnemonicParsing="false" onAction="#onCalc" prefHeight="40.0" prefWidth="150.0" text="Calculate" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clrBtn" cancelButton="true" layoutX="350.0" layoutY="155.0" mnemonicParsing="false" onAction="#onClear" prefHeight="40.0" prefWidth="150.0" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+            <Label fx:id="msgLbl" alignment="CENTER" layoutX="27.0" layoutY="370.0" prefHeight="17.0" prefWidth="455.0" textFill="#f20606" underline="true" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>

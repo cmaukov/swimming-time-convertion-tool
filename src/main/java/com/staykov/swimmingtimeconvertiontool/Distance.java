@@ -1,10 +1,10 @@
-package com.bmstechpro.javafxexamples.pooltime.conv;
+package com.staykov.swimmingtimeconvertiontool;
 /* javafx-examples
  * @created 01/16/2023
  * @author Konstantin Staykov
  */
 
-public enum Distance {
+public enum Distance implements HasDisplayName {
     _50("50", 50),
     _100("100", 100),
     _200("200", 200),
