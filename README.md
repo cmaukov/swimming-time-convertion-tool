@@ -1,2 +1,1 @@
-# swimming-time-convertion-tool
-# JavaFX Swimming Time Cconversion Tool
+# JavaFX Swimming Time Conversion Tool
